@@ -1,0 +1,36 @@
+/* if parent element have height than we can give child height in % */
+
+/* #page1{
+	background-image: url("./assets/photo1.jpg");
+} */
+.elem{
+	/* background-color: red; */
+	position: relative;
+	height: 25%;
+	border-bottom: 2px solid #eee9cc;
+	color:#eee9cc ;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 0px 20px;
+	overflow: hidden;
+}
+
+.overlay{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color:black;
+	left:0;
+	top:110%;
+}
+
+
+h1{
+  font-size: 8vw;
+  font-weight: 600;
+}
+h5{
+	font-size: 2vw;
+  font-weight: 600;
+}

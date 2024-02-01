@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
+import LoadingPage from "landingSite/LoadingPage";
 
 function App() {
   const mode = useSelector((state) => state.mode);                                //accessing mode
@@ -17,9 +18,11 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <ThemeProvider theme={theme}>
-          <CssBaseline />                          {/*  css reset    */}
+          <CssBaseline />                          {/*  css reset : a list of rules that 'reset' all of the default browser styles   */}
           <Routes>
-            <Route path="/" element={<LoginPage />} />
+			<Route path="/" element={isAuth ?<Navigate to="/home"/>:<LoadingPage/>}/>
+
+            <Route path="/login" element={isAuth?<Navigate to="/home"/>:<LoginPage />} />
             <Route
               path="/home"
               element={isAuth ? <HomePage /> : <Navigate to="/" />}

@@ -10,9 +10,10 @@ const initialState = {
 
 
 //reducers contain functions which can change this global states
+//reducer functions to define how the state can be updated
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: "auth",										//Creating a slice requires a string name to identify the slice
   initialState,
   reducers: {
     setMode: (state) => {
@@ -45,6 +46,9 @@ export const authSlice = createSlice({
     },
   },
 });
+
+// We can read data from the store with useSelector
+// dispatch actions using useDispatch
 
 // export functions
 export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } =
