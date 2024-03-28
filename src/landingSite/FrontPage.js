@@ -10,6 +10,7 @@ import photo7 from "./assets/photo7.jpg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./css/FrontPage.css";
 import { Link } from "react-router-dom";
+import SecondPage from "./SecondPage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,67 +55,64 @@ export default function FrontPage() {
 		  delay: 2,
 		  duration: 0,
 		});
+		gsap.to("#elem1 h1", {
+			x: -200,
+			scrollTrigger: {
+			  trigger: "#elem1 h1",
+			  scroller: ".app",
+			  start: "top -5%",
+			  end: "top -90%",
+			  scrub: 3,
+			},
+		  });
+		  gsap.to("#elem2 h1", {
+			x: 200,
+			scrollTrigger: {
+			  trigger: "#elem1 h1",
+			  scroller: ".app",
+			  start: "top -5%",
+			  end: "top -90%",
+			  scrub: 5,
+			},
+		  });
+	  
+		  gsap.to("#elem1 h5", {
+			x: 200,
+			scrollTrigger: {
+			  trigger: "#elem1 h1",
+			  scroller: ".app",
+			  start: "top -5%",
+			  end: "top -90%",
+			  scrub: 3,
+			},
+		  });
+		  gsap.to("#elem2 h5", {
+			x: -200,
+			scrollTrigger: {
+			  trigger: "#elem1 h1",
+			  scroller: ".app",
+			  start: "top -5%",
+			  end: "top -90%",
+			  scrub: 5,
+			},
+		  });
+	  
+		  gsap.to("#bg", {
+			scrollTrigger: {
+			  trigger: "#bg",
+			  scroller: ".app",
+			  start: "top -5%",
+			  end: "top -90%",
+			  scrub: 3,
+			},
+			opacity: 0.5,
+		  });
   
-	  gsap.to("#elem1 h1", {
-		x: -200,
-		scrollTrigger: {
-		  trigger: "#elem1 h1",
-		  scroller: "body",
-		  markers: true,
-		  start: "top -5%",
-		  end: "top -90%",
-		  scrub: 3,
-		},
-	  });
-	  gsap.to("#elem2 h1", {
-		x: 200,
-		scrollTrigger: {
-		  trigger: "#elem1 h1",
-		  scroller: "body",
-		  markers: true,
-		  start: "top -5%",
-		  end: "top -90%",
-		  scrub: 5,
-		},
-	  });
-  
-	  gsap.to("#elem1 h5", {
-		x: 200,
-		scrollTrigger: {
-		  trigger: "#elem1 h1",
-		  scroller: "body",
-		  markers: true,
-		  start: "top -5%",
-		  end: "top -90%",
-		  scrub: 3,
-		},
-	  });
-	  gsap.to("#elem2 h5", {
-		x: -200,
-		scrollTrigger: {
-		  trigger: "#elem1 h1",
-		  scroller: "body",
-		  markers: true,
-		  start: "top -5%",
-		  end: "top -90%",
-		  scrub: 5,
-		},
-	  });
-  
-	  gsap.to("#bg", {
-		scrollTrigger: {
-		  trigger: "#bg",
-		  scroller: "body",
-		  start: "top -5%",
-		  end: "top -90%",
-		  scrub: 3,
-		},
-		opacity: 0.5,
-	  });
+	 
 	}, []);
   
 	return (
-	  <>
+	  <section >
 		<div id="page1" className={`h-screen w-full bg-cover bg-bottom`}>
 		  <div id="page1-in" className=" h-full relative z-[99]">
 			<div className="elem" id="elem1">
@@ -153,13 +151,8 @@ export default function FrontPage() {
 		  ></div>
 		</div>
   
-		<div className=" h-screen">
-			<Link to="/login">
-			<button>Login</button>
-			</Link>
-			
-		</div>
-	  </>
+		
+	  </section>
 	);
   }
   

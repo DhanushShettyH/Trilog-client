@@ -2,6 +2,10 @@ import React, { useEffect } from "react";
 import "./css/LoadingPage.css";
 import gsap from "gsap";
 import FrontPage from "./FrontPage";
+import SecondPage from "./SecondPage";
+import ThirdPage from "./ThirdPage";
+import ForthPage from "./ForthPage";
+import Fotter from "./Fotter";
 
 const animations=()=>{
 	const counter3 = document.querySelector(".counter-3");
@@ -115,9 +119,31 @@ export default function LoadingPage() {
 
   return (
     <>
-      <div className=" relative h-screen w-full top-0 left-0 z-10">
-        <FrontPage />
+      <div className=" relative w-full top-0 left-0 z-10 snap-y snap-proximity ">
+       <section id="home" className=" snap-center">
+	   <FrontPage />
+	   </section>
+
+		<section className=" snap-center">
+		<SecondPage/>
+		</section>
+		
+		<section>
+			<ThirdPage/>
+		</section>
+
+		<section>
+			<ForthPage/>
+		</section>
+		
+		<section>
+			<Fotter/>
+		</section>
       </div>
+	
+			
+			
+	
 
       <div className="loading-screen h-screen w-full z-50">
         <div className="loader">

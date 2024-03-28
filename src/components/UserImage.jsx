@@ -7,7 +7,7 @@ const UserImage = ({ image, size = "60px" }) => {
 	  className=" rounded-full h-[60px] w-[60px]"
         style={{ objectFit: "cover", borderRadius: "50%" }}
         alt="user"
-        src={`http://localhost:3001/assets/${image}`}
+        src={`https://trilog-server.onrender.com/assets/${image}`}
       />
     </Box>
   );

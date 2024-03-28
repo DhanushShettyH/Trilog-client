@@ -44,44 +44,44 @@ const Navbar = () => {
 	const fullName = `${user.firstName} ${user.lastName}`;
 
 
-	const [redirectUrl, setredirectUrl] = useState("");
+	// const [redirectUrl, setredirectUrl] = useState("");
 
-	const commands = [{
-		command: ["Go to *", "Open *",],
-		callback: (redirectPage) => setredirectUrl(redirectPage)
-	},//* is redirectPage
-	];
-	const { transcript } = useSpeechRecognition({ commands });
+	// const commands = [{
+	// 	command: ["Go to *", "Open *",],
+	// 	callback: (redirectPage) => setredirectUrl(redirectPage)
+	// },//* is redirectPage
+	// ];
+	// const { transcript } = useSpeechRecognition({ commands });
 
-	const pages = ["home", "profile","logout"];
-	const urls = {
-		home: "/home",
-		profile: `/profile/${user._id}`
-	};
-
-
-	useEffect(() => {
-		if (redirectUrl) {
-			if (pages.includes(redirectUrl)) {
-				console.log(redirectUrl);
-
-				navigate(urls[redirectUrl])
-				if(redirectUrl==="logout"){
-					dispatch(setLogout());
-				}
+	// const pages = ["home", "profile","logout"];
+	// const urls = {
+	// 	home: "/home",
+	// 	profile: `/profile/${user._id}`
+	// };
 
 
-			}
-			else {
-				console.log(redirectUrl, "failed");
-				// @ts-ignore
+	// useEffect(() => {
+	// 	if (redirectUrl) {
+	// 		if (pages.includes(redirectUrl)) {
+	// 			console.log(redirectUrl);
 
-			}
-		}
-	}, [redirectUrl])
-	if (!SpeechRecognition.browserSupportsSpeechRecognition) {
-		return null
-	}
+	// 			navigate(urls[redirectUrl])
+	// 			if(redirectUrl==="logout"){
+	// 				dispatch(setLogout());
+	// 			}
+
+
+	// 		}
+	// 		else {
+	// 			console.log(redirectUrl, "failed");
+	// 			// @ts-ignore
+
+	// 		}
+	// 	}
+	// }, [redirectUrl])
+	// if (!SpeechRecognition.browserSupportsSpeechRecognition) {
+	// 	return null
+	// }
 
 
 	return (
@@ -130,11 +130,7 @@ const Navbar = () => {
 					<Notifications sx={{ fontSize: "25px" }} />
 					<Help sx={{ fontSize: "25px" }} />
 					<Box>
-						<Button
-							onClick={SpeechRecognition.startListening}
-						>
-							Start
-						</Button>
+					
 					</Box>
 					<FormControl variant="standard" value={fullName}>
 						<Select
@@ -160,6 +156,9 @@ const Navbar = () => {
 							<MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
 						</Select>
 					</FormControl>
+					<Box>
+					<p id="transcript"></p>
+					</Box>
 				</FlexBetween>
 			) : (
 				<IconButton
@@ -237,6 +236,9 @@ const Navbar = () => {
 								</MenuItem>
 							</Select>
 						</FormControl>
+						<Box>
+					<p id="transcript"></p>
+					</Box>
 					</FlexBetween>
 				</Box>
 			)}
