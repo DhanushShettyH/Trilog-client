@@ -47,16 +47,16 @@ for (let i = 0; i < item.length; i++) {
         <ThemeProvider theme={theme}>
                                  {/*  css reset : a list of rules that 'reset' all of the default browser styles   */}
           <Routes>
-			<Route path="/trilog" element={isAuth ?<Navigate to="/home"/>:<Home/>}/>
+			<Route path="/trilog" element={isAuth ?<Navigate to="/trilog/home"/>:<Home/>}/>
 
-            <Route path="/login" element={isAuth?<Navigate to="/home"/>:<LoginPage />} />
+            <Route path="/trilog/login" element={isAuth?<Navigate to="/trilog/home"/>:<LoginPage />} />
             <Route
-              path="/home"
-              element={isAuth ? <HomePage /> : <Navigate to="/" />}
+              path="/trilog/home"
+              element={isAuth ? <HomePage /> : <Navigate to="/trilog" />}
             />
             <Route
-              path="/profile/:userId"
-              element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
+              path="/trilog/profile/:userId"
+              element={isAuth ? <ProfilePage /> : <Navigate to="/trilog" />}
             />
           </Routes>
         </ThemeProvider>
