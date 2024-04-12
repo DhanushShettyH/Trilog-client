@@ -123,7 +123,7 @@ export default function SecondPage() {
             <div className="absolute opacity-0 bottom-[10%] w-[500px] elmt button grid grid-cols-12 gap-[20px] mt-[30px]">
               <Link
                 className=" col-span-3 place-items-center bg-black text-white h-[50px] hover:scale-110 transition-all ease-in-out duration-150 text-[18px] relative font-semibold rounded-full text-center justify-center flex animate-pulse"
-                to="/trilog/login"
+                to="/login"
               >
                 Login in
               </Link>

@@ -56,7 +56,7 @@ const Navbar = () => {
 	// const pages = ["home", "profile","logout"];
 	// const urls = {
 	// 	home: "/home",
-	// 	profile: `/trilog/profile/${user._id}`
+	// 	profile: `/profile/${user._id}`
 	// };
 
 
@@ -91,7 +91,7 @@ const Navbar = () => {
 					fontWeight="bold"
 					fontSize="clamp(1rem, 2rem, 2.25rem)"                       //clamp(min recommended max)      in small device min
 					color="primary"
-					onClick={() => navigate("/trilog/home")}
+					onClick={() => navigate("/home")}
 					sx={{
 						"&:hover": {
 							color: primaryLight,

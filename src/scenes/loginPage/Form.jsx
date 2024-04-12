@@ -94,7 +94,7 @@ const Form = () => {
           token: loggedIn.token,
         })
       );
-      navigate("/trilog/home");
+      navigate("/home");
     }
   };
 

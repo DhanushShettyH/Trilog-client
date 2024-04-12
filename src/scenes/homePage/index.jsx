@@ -23,8 +23,8 @@ const dispatch = useDispatch();                                                 
 
 	const pages = ["go to home", "go to profile","logout"];
 	const urls = {
-		"go to home": "/trilog/home",
-		"go to profile": `/trilog/profile/${_id}`
+		"go to home": "/home",
+		"go to profile": `/profile/${_id}`
 	};
 
 	const speechRecognition = window.speechRecognition || window.webkitSpeechRecognition
