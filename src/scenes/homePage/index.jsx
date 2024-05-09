@@ -48,7 +48,7 @@ const dispatch = useDispatch();                                                 
 
 			}
 
-			else if (command === "goup" || command === "scrollup" || command ==="scroll up") {
+			else if (command === "goup" || command === "scrollup" || command ==="scroll up" || command ==="Scroll up") {
 
 
 				scrollup = setInterval(() => execute(), 2000);
