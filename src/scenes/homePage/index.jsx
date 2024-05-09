@@ -34,14 +34,18 @@ const dispatch = useDispatch();                                                 
 
 		recognition.onresult = (event) => {
 			var command = event.results[0][0].transcript
+			var app = document.getElementById("app");
 			// document.querySelector("#transcript").textContent=command;
 			console.log(command);
 
 			if (pages.includes(command)) {
+				console.log('hi');
 
 				navigate(urls[command])
 				recognition.stop();
 				if(command==="logout"){
+					clearInterval(scrollup);
+					clearInterval(scrolldown);
 					dispatch(setLogout());
 				}
 
@@ -53,18 +57,22 @@ const dispatch = useDispatch();                                                 
 
 				scrollup = setInterval(() => execute(), 2000);
 				function execute() {
-					window.scrollBy(0, -500);
+					console.log('going up');
+					app.scrollBy(0, -500);
 
 				}
 
 			}
 			else if (command === "godown" || command === "scrolldown" || command ==="scroll down") {
+				
 
 				scrolldown = setInterval(() => execute(), 2000);
 				function execute() {
-					window.scrollBy(0, 500);
+					console.log("going down!!")
+					app.scrollBy(0, 500);
 
 				}
+		
 				
 
 			}
@@ -76,10 +84,13 @@ const dispatch = useDispatch();                                                 
 			else if(command ==="change"){
 				dispatch(setMode());
 			}
-			else if (window.scrollY === 0 || (window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+			else if (app.scrollY === 0 || (app.innerHeight + app.scrollY) >= document.body.scrollHeight) {
 				clearInterval(scrollup);
 				clearInterval(scrolldown);
 				console.log("stop .");
+			}
+			else{
+				console.log('bye')
 			}
 
 
@@ -87,14 +98,22 @@ const dispatch = useDispatch();                                                 
 	}
 	recognition.onend = () => {
 		recognition.start();
-		window.onscroll = function(ev) {
-			if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight){
+		var app = document.getElementById("app");
+		app.onscroll = function(ev) {
+			if ((app.clientHeight + app.scrollTop) >= app.scrollHeight-20){
 				clearInterval(scrollup);
 				clearInterval(scrolldown);
 				console.log("stop 2.");
 			}
+			if(app.scrollTop<=915){
+				clearInterval(scrollup);
+				clearInterval(scrolldown);
+				
+
+			}
 		};
 	}
+
 
 
 
