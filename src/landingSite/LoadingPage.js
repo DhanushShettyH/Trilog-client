@@ -112,6 +112,28 @@ const animations=()=>{
 }
 
 export default function LoadingPage() {
+
+	// Check if the browser supports getUserMedia
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Request access to the microphone
+    navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(function(stream) {
+            // User granted access to the microphone
+            console.log('Microphone access granted');
+            // Do something with the stream, like recording or streaming
+        })
+        .catch(function(error) {
+            // User denied access to the microphone
+            console.error('Error accessing microphone:', error);
+            // Handle error, like displaying a message to the user
+        });
+} else {
+    // Browser doesn't support getUserMedia
+    console.error('getUserMedia not supported on your browser');
+    // Handle unsupported case, like displaying a message to the user
+}
+
+
   useEffect(() => {
 	animations();
 

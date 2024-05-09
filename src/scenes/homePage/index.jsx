@@ -101,13 +101,14 @@ const dispatch = useDispatch();                                                 
 		var app = document.getElementById("app");
 		app.onscroll = function(ev) {
 			if ((app.clientHeight + app.scrollTop) >= app.scrollHeight-20){
-				clearInterval(scrollup);
+				
 				clearInterval(scrolldown);
 				console.log("stop 2.");
 			}
-			if(app.scrollTop<=915){
+			if(app.scrollTop === 0){
+		
 				clearInterval(scrollup);
-				clearInterval(scrolldown);
+				
 				
 
 			}
