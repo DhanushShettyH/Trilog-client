@@ -14,3 +14,19 @@ body,
   scroll-behavior: smooth;
 
 }
+
+
+.loading {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+    font-size: 2em;
+    z-index: 1000; /* Ensure it covers all content */
+}

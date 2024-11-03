@@ -117,21 +117,21 @@ export default function FrontPage() {
 		  <div id="page1-in" className=" h-full relative z-[99]">
 			<div className="elem" id="elem1">
 			  <h1>Express Yourself</h1>
-			  <h5>Unleash Your Social Side</h5>
+			  <h5 className=" invisible md:visible">Unleash Your Social Side</h5>
 			  <div className="overlay" id="overlay1"></div>
 			</div>
 			<div className="elem" id="elem2">
-			  <h5>Discover</h5>
+			  <h5 className=" invisible md:visible">Discover</h5>
 			  <h1>Connect with Others</h1>
 			  <div className="overlay" id="overlay1"></div>
 			</div>
 			<div className="elem" id="elem1">
 			  <h1>Your Social Journey</h1>
-			  <h5>Share Life</h5>
+			  <h5 className=" invisible md:visible">Share Life</h5>
 			  <div className="overlay" id="overlay1"></div>
 			</div>
 			<div className="elem" id="elem2">
-			  <h5>Begin here.</h5>
+			  <h5 className=" invisible md:visible">Begin here.</h5>
 			  <h1>Starts Here.</h1>
 			  <div className="overlay" id="overlay1"></div>
 			</div>
