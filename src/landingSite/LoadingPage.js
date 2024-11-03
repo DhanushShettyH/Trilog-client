@@ -150,15 +150,15 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 		<SecondPage/>
 		</section>
 		
-		<section>
+		<section className="hidden md:block">
 			<ThirdPage/>
 		</section>
 
-		<section>
+		<section className="hidden md:block">
 			<ForthPage/>
 		</section>
 		
-		<section>
+		<section className="hidden md:block">
 			<Fotter/>
 		</section>
       </div>

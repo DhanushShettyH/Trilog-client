@@ -39,7 +39,7 @@ const dispatch = useDispatch();                                                 
 			console.log(command);
 
 			if (pages.includes(command)) {
-				console.log('hi');
+				
 
 				navigate(urls[command])
 				recognition.stop();
