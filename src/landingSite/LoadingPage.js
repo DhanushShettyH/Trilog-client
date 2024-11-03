@@ -128,15 +128,15 @@ export default function LoadingPage() {
 		<SecondPage/>
 		</section>
 		
-		<section>
+		<section className="hidden md:block">
 			<ThirdPage/>
 		</section>
 
-		<section>
+		<section className="hidden md:block">
 			<ForthPage/>
 		</section>
 		
-		<section>
+		<section className="hidden md:block">
 			<Fotter/>
 		</section>
       </div>

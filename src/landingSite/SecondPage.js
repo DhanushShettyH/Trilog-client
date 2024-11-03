@@ -104,7 +104,7 @@ export default function SecondPage() {
     <section>
       <div className="container pl-10 w-[100%] h-screen m-auto overflow-hidden relative">
         <div className="menu my-[15px] mx-[0px] ">
-          <div className="logo absolute opacity-0 bottom-[50%]">
+          <div className="logo absolute opacity-0 bottom-[55%] md:bottom-[50%] ">
             <p className=" font-bold text-[30px]">
               Trilog{" "}
             </p>{" "}
@@ -112,28 +112,28 @@ export default function SecondPage() {
         </div>
         <div className="wrapper w-full grid grid-cols-12">
           <div className="lwrap w-[90%] col-span-5">
-            <h1 className="absolute opacity-0 bottom-[30%] w-[500px] elmt text-[50px] font-semibold capitalize leading-[110%] text-[rgba(20,19,19,1)] mt-[40px]">
+            <h1 className="absolute opacity-0 bottom-[35%] md:bottom-[30%] w-[400px] md:w-[500px] elmt text-[50px] font-semibold capitalize leading-[110%] text-[rgba(20,19,19,1)] mt-[40px]">
               The Future of <span className=" font-bold">Technology</span> is
               way to better than anything
             </h1>
-            <p className="absolute opacity-0 bottom-[17%] w-[500px] elmt p-[20px 80px 30px 0px]">
+            <p className="absolute opacity-0 bottom-[22%] md:bottom-[17%] w-[400px] md:w-[500px] elmt p-[20px 80px 30px 0px]">
              be a part of rising star, and explore new
               people everyday share your opinion and embrase others.
             </p>
-            <div className="absolute opacity-0 bottom-[10%] w-[500px] elmt button grid grid-cols-12 gap-[20px] mt-[30px]">
+            <div className="absolute opacity-0 bottom-[15%] md:bottom-[10%] w-[400px] md:w-[500px] elmt button grid grid-cols-12 gap-[20px] mt-[30px]">
               <Link
                 className=" col-span-3 place-items-center bg-black text-white h-[50px] hover:scale-110 transition-all ease-in-out duration-150 text-[18px] relative font-semibold rounded-full text-center justify-center flex animate-pulse"
                 to="/login"
               >
                 Login in
               </Link>
-              <div className="vbtn col-span-4 flex place-items-center cursor-pointer hover:scale-110 transition-all ease-in-out duration-150">
+              <div className="vbtn col-span-4 hidden md:flex place-items-center cursor-pointer hover:scale-110 transition-all ease-in-out duration-150">
                 <img className=" w-[35px]" src={vb} alt="" />
                 <a className=" text-[20px] p-0 bg-transparent text-black" href="#third">Scroll down</a>
               </div>
             </div>
           </div>
-          <div className="rwrap flex  justify-end col-span-7 ">
+          <div className="rwrap hidden md:flex  justify-end col-span-7 ">
             <div className="img1">
               <img src={img1} alt="" />
               <img src={img2} alt="" />
